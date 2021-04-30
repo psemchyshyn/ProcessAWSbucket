@@ -8,6 +8,7 @@ import psycopg2
 import asyncio
 import time
 import csv
+import os
 import sys
 from collections import defaultdict
 from sync_inserts import INSERTIONS
