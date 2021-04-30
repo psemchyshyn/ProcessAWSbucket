@@ -1,3 +1,6 @@
 /__pycache__
 /db/__pycache__
 /files_list.data
+/benchmarking/__pycache__
+/benchmarking/additional_scripts/__pycache__
+/async_test.py
