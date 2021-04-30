@@ -67,8 +67,3 @@ async def main():
 if __name__ == "__main__":
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     asyncio.run(main())
-
-
-# TODO add normalization field trigger/function + env varaibles + docker + sync solutions correction + time plot
-
-# Remove time import, make while true
