@@ -73,5 +73,4 @@ async def test(n):
 
 
 if __name__ == "__main__":
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     asyncio.run(test(int(sys.argv[1]))) # launch program n number of times, given from command line args

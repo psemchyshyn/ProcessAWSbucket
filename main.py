@@ -14,7 +14,7 @@ from db.inserts import INSERTIONS
 
 BASE_URL = "https://data-engineering-interns.macpaw.io/"
 FILES_LIST_URL = BASE_URL + "files_list.data"
-DSN = os.environ.get('DATABASE_URI') # POSTGRES DATABASE server
+DSN = 'postgres://postgres:postgres@db:5432/AWSdata' # POSTGRES DATABASE server
 
 PROCESSED_FILES = set()
 
@@ -47,7 +47,7 @@ async def process_file(name: str, pool: asyncpg.Pool) -> None:
     for element in data:
         if (typ := element["type"]) in INSERTIONS: # = if the object type is song, movie or app
             objects[typ].append(element["data"])
-    await asyncio.gather(*[asyncio.create_task(INSERTIONS[typee](pool, val)) for (typee, val) in objects.items()])
+    await asyncio.gather(*[INSERTIONS[typee](pool, val) for (typee, val) in objects.items()])
     PROCESSED_FILES.add(name)
 
 
@@ -61,9 +61,9 @@ async def main():
         while True:
             obtained = await fetch_file_names(FILES_LIST_URL)
             unprocessed = obtained - PROCESSED_FILES
+            print("New incoming files:", unprocessed)
             await asyncio.gather(*[process_file(filename, pool) for filename in unprocessed])
 
 
 if __name__ == "__main__":
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     asyncio.run(main())
