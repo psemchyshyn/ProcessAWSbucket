@@ -26,15 +26,15 @@ the program was launched)).
   * <a href="https://github.com/psemchyshyn/ProcessAWSbucket/blob/master/db/schema.sql">schema.sql</a> - defines a schema for database - tables, functions and triggers(the last are used for filling the columns original_title_normalized in movies and is_awesome in apps tables)
   * <a href="https://github.com/psemchyshyn/ProcessAWSbucket/blob/master/db/init.py">init.py</a> - contains python function to init the db schema
   * <a href="https://github.com/psemchyshyn/ProcessAWSbucket/blob/master/db/inserts.py">inserts.py</a> - contains python functions for performing insertions into different tables
-  * <a href="">Dockerfile</a> - for creating an image of postgres and running it in a container
+  * <a href="https://github.com/psemchyshyn/ProcessAWSbucket/blob/master/db/Dockerfile">Dockerfile</a> - for creating an image of postgres and running it in a container
 * <a href="https://github.com/psemchyshyn/ProcessAWSbucket/tree/master/benchmarking">/benchmarking</a>
   * <a href="https://github.com/psemchyshyn/ProcessAWSbucket/blob/master/benchmarking/plot.py">plot.py</a> - defines function used to obtain a plot
   * <a href="https://github.com/psemchyshyn/ProcessAWSbucket/tree/master/benchmarking/additional_scripts">/additional_scripts</a> - scripts for testing synchronous versions of the program
   * csv files containing data presented in the given above plot and the plot itself
 * <a href="https://github.com/psemchyshyn/ProcessAWSbucket/blob/master/main.py">main.py</a>. Contains main logic of the program - entry point
-* <a href="">Dockerfile</a> - for creating an image of the main program
-* <a href="">requirements.txt</a> for installing python libraries used in the program
-* <a href="">docker-compose.yml></a> - for setting up the whole program
+* <a href="https://github.com/psemchyshyn/ProcessAWSbucket/blob/master/Dockerfile">Dockerfile</a> - for creating an image of the main program
+* <a href="https://github.com/psemchyshyn/ProcessAWSbucket/blob/master/requirements.txt">requirements.txt</a> for installing python libraries used in the program
+* <a href="https://github.com/psemchyshyn/ProcessAWSbucket/blob/master/docker-compose.yml">docker-compose.yml</a> - for setting up the whole program
 
 ### Running the program:
 
